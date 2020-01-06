@@ -2,7 +2,7 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
 import LoginForm from './Components/LoginForm'
-import DataBase from './Components/DataBase'
+import ToDo from './Components/ToDo'
 
 const Apps = createStackNavigator({ 
   Login: {
@@ -11,8 +11,8 @@ const Apps = createStackNavigator({
       headerShown: false
     }
   },
-  dataBase: {
-    screen: DataBase,
+  ToDo: {
+    screen: ToDo,
     navigationOptions: {
       title: 'Back to Login',
     },

@@ -60,7 +60,7 @@ export default class App extends Component {
             <TouchableOpacity 
               style={{marginTop: 20}}
               activeOpacity = {1}
-              onPress={() => {this.props.navigation.navigate('dataBase')}}>
+              onPress={() => {this.props.navigation.navigate('ToDo')}}>
 
               <View style={styles.loginButtonContainer}>
                 <Text style={styles.loginButtonText}>Login</Text>
