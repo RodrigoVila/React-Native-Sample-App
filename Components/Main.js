@@ -41,11 +41,11 @@ render() {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            style={[styles.button, styles.toseeButton]}
+            style={[styles.button, styles.GTNButton]}
             activeOpacity = {1}
-            onPress={() => {this.props.navigation.navigate('ToSee')}}>
+            onPress={() => {this.props.navigation.navigate('GTN')}}>
             <View>
-              <Text style={styles.buttonText}>Nothing yet :)</Text>
+              <Text style={styles.buttonText}>Guess the Number</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     borderColor: 'orange'
   },
 
-  toseeButton: {
+  GTNButton: {
     borderColor: 'purple'
   }
 });

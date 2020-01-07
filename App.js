@@ -7,7 +7,7 @@ import Main from './Components/Main';
 import LoginForm from './Components/LoginForm';
 import ToDo from './Components/ToDo';
 import MovieDB from './Components/MovieDB';
-import ToSee from './Components/ToSee';
+import GuessTheNumber from './Components/GuessTheNumber';
 
 const Apps = createStackNavigator({ 
   Login: {
@@ -43,8 +43,8 @@ const Apps = createStackNavigator({
     }
   },
 
-  ToSee: {
-    screen: ToSee,
+  GTN: {
+    screen: GuessTheNumber,
     navigationOptions: {
       title: 'Back to Main'
     }
