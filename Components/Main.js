@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { Text } from "native-base";
+import { Video } from 'expo-av';
 
 export default class Main extends Component {
   constructor() {
@@ -9,35 +10,45 @@ export default class Main extends Component {
 render() {
   return (
     <View style={styles.container}>
-      <View style={styles.buttons}>
+    <Video
+  source={require('../assets/snowy.mp4')}
+  rate={1.0}
+  volume={1.0}
+  isMuted={true}
+  resizeMode="cover"
+  shouldPlay
+  isLooping
+  style={styles.video}
+/>
+        <View style={styles.buttons}>
 
-        <TouchableOpacity 
-          style={[styles.button, styles.toDoButton]}
-          activeOpacity = {1}
-          onPress={() => {this.props.navigation.navigate('ToDo')}}>
-          <View>
-            <Text style={styles.buttonText}>To Do List</Text>
-          </View>
-        </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.button, styles.toDoButton]}
+            activeOpacity = {1}
+            onPress={() => {this.props.navigation.navigate('ToDo')}}>
+            <View>
+              <Text style={styles.buttonText}>To Do List</Text>
+            </View>
+          </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.button, styles.moviesButton]}
-          activeOpacity = {1}
-          onPress={() => {this.props.navigation.navigate('MovieDB')}}>
-          <View>
-            <Text style={styles.buttonText}>Movie DB</Text>
-          </View>
-        </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.button, styles.moviesButton]}
+            activeOpacity = {1}
+            onPress={() => {this.props.navigation.navigate('MovieDB')}}>
+            <View>
+              <Text style={styles.buttonText}>Movie DB</Text>
+            </View>
+          </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.button, styles.toseeButton]}
-          activeOpacity = {1}
-          onPress={() => {this.props.navigation.navigate('ToSee')}}>
-          <View>
-            <Text style={styles.buttonText}>????</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity 
+            style={[styles.button, styles.toseeButton]}
+            activeOpacity = {1}
+            onPress={() => {this.props.navigation.navigate('ToSee')}}>
+            <View>
+              <Text style={styles.buttonText}>Nothing yet :)</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
     </View>
   );
 }}
@@ -51,8 +62,18 @@ const styles = StyleSheet.create({
 
   },
 
+  video: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+    zIndex: 1,
+  },
+
   buttons: {
     width: '50%',
+    zIndex: 2
   },
 
   button: {
@@ -64,18 +85,19 @@ const styles = StyleSheet.create({
 
   buttonText: {
     textAlign: 'center',
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: 'white'
   },
 
   toDoButton: {
-    backgroundColor: 'blue'
+    borderColor: 'red'
   },
 
   moviesButton: {
-    backgroundColor: 'red'
+    borderColor: 'orange'
   },
 
   toseeButton: {
-    backgroundColor: 'green'
+    borderColor: 'purple'
   }
 });

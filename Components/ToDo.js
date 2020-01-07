@@ -27,7 +27,7 @@ export default function ToDo() {
 
   return (
     <View style={styles.screen}>
-      <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
+      <Button title="Add New To Do" onPress={() => setIsAddMode(true)} />
       <GoalInput
         visible={isAddMode}
         onAddGoal={addGoalHandler}
@@ -40,7 +40,7 @@ export default function ToDo() {
           <GoalItem
             id={itemData.item.id}
             onDelete={removeGoalHandler}
-            title={itemData.item.value}
+            title={itemData.item.value + ' (Long Press to Remove)'}
           />
         )}
       />
