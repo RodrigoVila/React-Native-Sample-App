@@ -43,11 +43,12 @@ const Apps = createStackNavigator({
     }
   },
 
-  GTN: {
+  GuessTheNumber: {
     screen: GuessTheNumber,
     navigationOptions: {
-      title: 'Back to Main'
+      headerShown: false
     }
+
   }
 });
 

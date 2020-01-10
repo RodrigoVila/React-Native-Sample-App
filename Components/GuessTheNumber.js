@@ -1,21 +1,14 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { Text } from "native-base";
+import { StyleSheet, View } from 'react-native';
+import Header from './GTN/Header'
+import StartGameScreen from './GTN/StartGameScreen';
 
-export default function Main() {
+
+export default function GuessTheNumber() {
   return (
     <View style={styles.container}>
-      <View style={styles.buttons}>
-        <TouchableOpacity 
-          style={styles.button, styles.todoButton}
-          activeOpacity = {1}
-          onPress={() => {this.props.navigation.navigate('ToDo')}}>
-          <View style={styles.loginButtonContainer}>
-            <Text style={styles.loginButtonText}>Login</Text>
-          </View>
-        </TouchableOpacity>
-
-      </View>
+      <Header title={'Guess The Number'} />
+      <StartGameScreen />
     </View>
   );
 }
@@ -25,22 +18,4 @@ const styles = StyleSheet.create({
     flex: 1
   },
 
-  buttons: {
-
-  },
-  button: {
-
-  },
-
-  todoButton: {
-
-  },
-
-  moviesButton: {
-
-  },
-
-  toseeButton: {
-
-  }
 });

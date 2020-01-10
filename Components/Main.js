@@ -43,7 +43,7 @@ render() {
           <TouchableOpacity 
             style={[styles.button, styles.GTNButton]}
             activeOpacity = {1}
-            onPress={() => {this.props.navigation.navigate('GTN')}}>
+            onPress={() => {this.props.navigation.navigate('GuessTheNumber')}}>
             <View>
               <Text style={styles.buttonText}>Guess the Number</Text>
             </View>

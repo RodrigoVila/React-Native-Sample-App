@@ -1,41 +1,49 @@
 import React from "react";
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import { Text } from "native-base";
+import { View, Text, StyleSheet, Image } from 'react-native';
+import Card from './MovieDB/Card'
 
-export default function Main() {
+const Main = props => {
   return (
     <View style={styles.container}>
-      <View style={styles.moviesContainer}>
-        <View style={styles.movies}>
-          <Image
-          style={{width: 150, height: 200}}
-          source={require('../assets/cinema.jpg')}
-          />
-          <Text style={styles.title}>Title</Text>
-
-          {/* <Text style={styles.rating}>Rating</Text> */}
+      <Card style={styles.card}>
+        <Image
+        style={{width: '100%', height: '100%'}}
+        source={require('../assets/cinema.jpg')} />
+        <View style={styles.rating}>
+          <Text style={styles.textRating}>4 Stars</Text>
         </View>
-
-      </View>
-
+      </Card>
     </View>
   );
 }
 
+export default Main
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
 
-  moviesContainer: {
-
+  card: {
+    borderWidth: 2,
+    width: '40%',
+    height: '30%'
   },
 
-  movies: {
+  rating: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    backgroundColor: '#fff',
+    opacity: 1,
+    paddingHorizontal: 5,
+    borderRadius: 10
+  },
+
+  textRating: {
+    fontWeight: 'bold'
 
   }
+
 
 });

@@ -45,7 +45,8 @@ export default class App extends Component {
                 <TextInput 
                   secureTextEntry={this.state.hidePassword} 
                   style={styles.textInput} 
-                  placeholder='Contraseña' />
+                  placeholder='Contraseña'
+                  autoCorrect={false} />
 
                 <MaterialCommunityIcons // Show/Hide Password Icon
                   style={{color:'white', alignSelf: 'center'}} 
