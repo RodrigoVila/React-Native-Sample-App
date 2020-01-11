@@ -1,8 +1,6 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { BlurView } from 'expo-blur';
 import Main from './Components/Main';
 import LoginForm from './Components/LoginForm';
 import ToDo from './Components/ToDo';

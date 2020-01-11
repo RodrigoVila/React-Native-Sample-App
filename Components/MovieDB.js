@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     opacity: 1,
     paddingHorizontal: 5,
-    borderRadius: 10
+    borderRadius: 20
   },
 
   textRating: {
