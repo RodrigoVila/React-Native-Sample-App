@@ -4,14 +4,21 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import Main from './Components/Main';
 import LoginForm from './Components/LoginForm';
+import Login from './Components/Login'
 import ToDo from './Components/ToDo';
-import MovieDB from './Components/MovieDB';
 import GuessTheNumber from './Components/GuessTheNumber';
 
 
 const Apps = createStackNavigator({ 
-  Login: {
+  LoginForm: {
     screen: LoginForm,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+
+  Login: {
+    screen: Login,
     navigationOptions: {
       headerShown: false
     }
@@ -29,17 +36,7 @@ const Apps = createStackNavigator({
   ToDo: {
     screen: ToDo,
     navigationOptions: {
-      title: 'Back to Main',
-    },
-    headerStyle: {
-      backgroundColor: '#f4511e',
-    }
-  },
-
-  MovieDB: {
-    screen: MovieDB,
-    navigationOptions: {
-      title: 'Back to Main'
+      headerShown: false
     }
   },
 
@@ -48,7 +45,6 @@ const Apps = createStackNavigator({
     navigationOptions: {
       headerShown: false
     }
-
   }
 });
 

@@ -14,7 +14,7 @@ import Input from './Input';
 import NumberContainer from './NumberContainer';
 import BodyText from './BodyText';
 import TitleText from './TitleText';
-import Colors from './constants/Colors';
+import Colors from '../constants/Colors';
 
 const StartGameScreen = props => {
   const [enteredValue, setEnteredValue] = useState('');

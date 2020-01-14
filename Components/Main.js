@@ -1,103 +1,82 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, ImageBackground } from 'react-native';
-import { Text } from "native-base";
-import { Video } from 'expo-av';
+import { StyleSheet, View, Text, Button } from "react-native";
+
+import Card from "./GTN/Card";
+import Colors from "./constants/Colors";
 
 export default class Main extends Component {
   constructor() {
     super();
   }
-render() {
-  return (
-    <View style={styles.container}>
-    <Video
-  source={require('../assets/snowy.mp4')}
-  rate={1.0}
-  volume={1.0}
-  isMuted={true}
-  resizeMode="cover"
-  shouldPlay
-  isLooping
-  style={styles.video}
-/>
-        <View style={styles.buttons}>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Card style={styles.cardContainer}>
+          <Text style={styles.cardTitle}>To Do List</Text>
+          <Text style={styles.cardText}>
+            Do you want to get things done? Just write them down in this simple to do app. 
+          </Text>
+          <View style={styles.button}>
+            <Button
+              title="TO DO LIST"
+              style={styles.button}
+              color={Colors.secondary}
+              onPress={() => {
+                this.props.navigation.navigate("ToDo");
+              }}
+            />
+          </View>
+        </Card>
 
-          <TouchableOpacity 
-            style={[styles.button, styles.toDoButton]}
-            activeOpacity = {1}
-            onPress={() => {this.props.navigation.navigate('ToDo')}}>
-            <View>
-              <Text style={styles.buttonText}>To Do List</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity 
-            style={[styles.button, styles.moviesButton]}
-            activeOpacity = {1}
-            onPress={() => {this.props.navigation.navigate('MovieDB')}}>
-            <View>
-              <Text style={styles.buttonText}>Movie DB</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity 
-            style={[styles.button, styles.GTNButton]}
-            activeOpacity = {1}
-            onPress={() => {this.props.navigation.navigate('GuessTheNumber')}}>
-            <View>
-              <Text style={styles.buttonText}>Guess the Number</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-    </View>
-  );
-}}
+        <Card style={styles.cardContainer}>
+          <Text style={styles.cardTitle}>Guess The Number</Text>
+          <Text style={styles.cardText}>
+            Computer has to guess a number of your choice from 1 to 99, but
+            don't cheat when giving hints!
+          </Text>
+          <View style={styles.button}>
+            <Button
+              title="GUESS THE NUMBER GAME"
+              color={Colors.primary}
+              onPress={() => {
+                this.props.navigation.navigate("GuessTheNumber");
+              }}
+            />
+          </View>
+        </Card>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
 
-  video: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
-    zIndex: 1,
+  cardContainer: {
+    width: "80%",
+    height: 200,
+    marginVertical: 40
   },
 
-  buttons: {
-    width: '50%',
-    zIndex: 2
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+    paddingTop: 10
+  },
+
+  cardText: {
+    paddingVertical: 10
   },
 
   button: {
-    borderWidth: 2,
-    borderRadius: 50,
-    margin: 10,
-    paddingVertical: 10,
-  },
-
-  buttonText: {
-    textAlign: 'center',
-    fontWeight: "bold",
-    color: 'white'
-  },
-
-  toDoButton: {
-    borderColor: 'red'
-  },
-
-  moviesButton: {
-    borderColor: 'orange'
-  },
-
-  GTNButton: {
-    borderColor: 'purple'
+    marginVertical: 10,
+    width: "90%",
+    alignSelf: "center"
   }
 });

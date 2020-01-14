@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Header from './GTN/Header';
+import Header from './Header';
 import StartGameScreen from './GTN/StartGameScreen';
 import GameScreen from './GTN/GameScreen';
 import GameOverScreen from './GTN/GameOverScreen';
