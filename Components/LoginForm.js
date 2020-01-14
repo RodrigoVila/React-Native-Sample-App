@@ -7,7 +7,11 @@ import CreateAccount from "./CreateAccount";
 const LoginForm = props => {
   const [createAccount, setCreateAccount] = useState(false);
 
-  // TODO: Como puedo hacer para que al apretar Create Account, cambie el componente que renderea de Login a CreateAccount
+  function handleChange () {
+    setCreateAccount(true)
+  }
+
+  // TODO: Show Login or CreateAccount components when "Create account" or "Back to Login" buttons are clicked
   if (!createAccount) {
     return (
       <View style={styles.container}>
@@ -16,7 +20,7 @@ const LoginForm = props => {
           style={styles.backGround}
         >
           <Image style={styles.logo} source={require("../assets/logo.png")} />
-          <Login navigation={this.props.navigation} />
+          <Login onChange={() => {handleChange}} />
         </ImageBackground>
       </View>
     );

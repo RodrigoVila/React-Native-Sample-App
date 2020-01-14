@@ -7,9 +7,14 @@ import {
 } from "@expo/vector-icons";
 import { Text, Item } from "native-base";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { withNavigation } from 'react-navigation'
 
-const Login = ({ navigation }) => {
+const Login = ({ props, navigation }) => {
   const [showPassword, setShowPassword] = useState(true);
+
+  function handleChange(event) {
+    props.onChange(event)
+  }
 
   return (
     <View style={styles.loginForm}>
@@ -56,15 +61,13 @@ const Login = ({ navigation }) => {
       <TouchableOpacity
         style={{ marginTop: 20 }}
         activeOpacity={1}
-        onPress={() => {
-          navigation.navigate("Main");
-        }}
+        onPress={() => {navigation.navigate("Main")}}
       >
         <View style={styles.loginButtonContainer}>
           <Text style={styles.loginButtonText}>Login</Text>
         </View>
       </TouchableOpacity>
-      <TouchableWithoutFeedback onPress={() => {}}>
+      <TouchableWithoutFeedback onPress={() => {handleChange}}>
         <Text
           style={{
             color: "white",
@@ -105,4 +108,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default withNavigation(Login);

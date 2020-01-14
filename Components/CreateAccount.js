@@ -7,8 +7,10 @@ import {
 } from "@expo/vector-icons";
 import { Text, Item } from "native-base";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { withNavigation } from 'react-navigation'
 
-const CreateAccount = props => {
+
+const CreateAccount = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(true);
 
   return (
@@ -124,4 +126,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CreateAccount;
+export default withNavigation(CreateAccount);
+

@@ -4,7 +4,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import Main from './Components/Main';
 import LoginForm from './Components/LoginForm';
-import Login from './Components/Login'
+import Login from './Components/Login';
+import CreateAccount from './Components/CreateAccount';
 import ToDo from './Components/ToDo';
 import GuessTheNumber from './Components/GuessTheNumber';
 
@@ -19,6 +20,13 @@ const Apps = createStackNavigator({
 
   Login: {
     screen: Login,
+    navigationOptions: {
+      headerShown: false
+    }
+  },
+
+  CreateAccount: {
+    screen: CreateAccount,
     navigationOptions: {
       headerShown: false
     }
